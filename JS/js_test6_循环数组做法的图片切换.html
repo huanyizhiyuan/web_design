@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        #box{
+            border:1px solid #ccc;
+
+            width:430px;
+            height:70px;
+            padding-top:430px;
+            margin-left: 20px;
+
+            background: url('./img/1.jpg') no-repeat;
+            background-size: cover;
+        }
+        #box ul li {
+            display: inline-block;
+            margin-right: 22px;
+            margin-left: 20px;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li class="item">
+            <img src="./img/2.jpg" height="40" width="40">
+        </li>
+        <li class="item">
+            <img src="./img/3.jpg" height="40" width="40">
+        </li>
+        <li class="item">
+            <img src="./img/4.jpg" height="40" width="40">
+        </li>
+        <li class="item">
+            <img src="./img/5.jpg" height="40" width="40">
+        </li>
+        <li class="item">
+            <img src="./img/6.webp" height="40" width="40">
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+    //还可以使用循环：
+    function $(id){
+        return typeof id === 'string'?document.getElementById(id):null;
+    }
+    //通过类名来获取
+    //console.log($('box'));
+    var items = document.getElementsByClassName('item');
+    for(var i=0;i<items.length;i++){
+        var item = items[i];
+        item.index = i+2;//从2.jpg开始
+        if(item.index<6){
+            items[i].onmouseover = function(){
+                $('box').style.backgroundImage = `url(./img./${this.index}.jpg)`;
+            }
+        }
+        else{
+            items[i].onmouseover = function(){
+                $('box').style.backgroundImage = `url(./img./${this.index}.webp)`;
+            }
+        }
+    }
+    //change('item1','url(./img/2.jpg)');
+    //change('item2','url(./img/3.jpg)');
+    //change('item3','url(./img/4.jpg)');
+    //change('item4','url(./img/5.jpg)');
+    //change('item5','url(./img/6.webp)');
+</script>
+</body>
+</html>

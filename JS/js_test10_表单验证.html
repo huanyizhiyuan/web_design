@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        #prompt{
+            font-size:18px;
+            color:darkgray;/*灰色*/
+        }
+        #score{
+            border:1px solid darkgray;
+        }
+        /*
+        这段CSS代码定义了一个名为.right的类样式。以下是对这段代码的详细解释：
+
+        .right:
+
+        这是一个类选择器，它选择了所有HTML元素中具有class="right"属性的元素。
+        background: url('./img/对.png') no-repeat 5px center;:
+
+        url('./img/对.png'): 这是一个背景图像的URL，指向当前目录下的img文件夹中的对.png文件。
+        no-repeat: 这意味着背景图像不会重复。
+        5px center: 这定义了背景图像的位置。5px是从左边开始的水平偏移量，而center是垂直方向上的中心位置。
+        background-size: 15px 15px;:
+
+        这定义了背景图像的大小。图像的宽度被设置为15px，高度也被设置为15px。
+        padding-left: 20px;:
+
+        这为具有.right类的元素设置了左侧内边距为20px。内边距是元素内容与元素边框之间的空间。在这里，左侧的内边距被设置为20px，这通常是为了给背景图像（在这种情况下是对.png）留出空间，使其不会与文本内容重叠。
+        color: lightgreen;:
+
+        这设置了元素的文本颜色为lightgreen。
+        总的来说，这个.right类样式主要用于为元素设置一个绿色的对勾图标（从对.png）作为背景，并确保图标与文本之间有足够的空间，同时设置文本颜色为浅绿色。
+
+        */
+        .right{
+            background:url('./img/对.png')no-repeat 5px center;
+            background-size: 18px 18px;
+            padding-left:30px;
+            color:lightgreen;
+        }
+        .error{
+            background:url('./img/错.png')no-repeat 5px center;
+            background-size: 18px 18px;
+            padding-left:30px;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <label for="score">您的成绩：</label>
+        <input type="text" placeholder="请输入分数" id="score">
+        <span id="prompt">请输入您的成绩</span>
+    </div>
+    <script type="text/javascript">
+        var element =document.getElementById('prompt');
+        function $(id){
+            return typeof id ==='string'?document.getElementById(id):null;
+        }
+        //input输入框失去焦点？(鼠标移走)
+        $('score').onblur = function(){
+            //1、获取输入的内容。
+            var value = parseFloat(this.value);
+            //console.log(value);
+            //这玩意是个字符串
+            //2、验证。
+            if(isNaN(value)||value<0||value>100){
+                //不是一个数：
+                $('prompt').innerHTML = '输入的成绩不正确';
+                $('prompt').setAttribute('class','error');
+                this.style.borderColor = 'red';
+                element.style.color = 'red';
+            }
+            else if(value >= 0 && value <= 100){
+                $('prompt').innerHTML = '输入的成绩正确';
+                $('prompt').setAttribute('class','right');
+                this.style.borderColor = 'lightgreen';
+                element.style.color = 'lightgreen';
+            }
+        }
+        //input输入框获取焦点，恢复原来的状态。
+        $('score').onfocus = function(){
+            $('prompt').innerHTML = "请输入您的成绩";
+            $('prompt').classname = "";
+            $('score').style.borderColor = "darkgray";
+            $('score').style.outline = "none";
+            $('score').value = "";
+            element.style.color = 'darkgray';
+        }
+    </script>
+</body>
+</html>

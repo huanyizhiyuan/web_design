@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript更改CSS颜色示例</title>
+    <style>
+        #myElement {
+            color: darkgray;
+        }
+        .error {
+            color: red;
+        }
+
+        .right {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<p id="myElement">这是一段文本。</p>
+<button onclick="changeColor()">点击更改颜色</button>
+
+<script>
+    function changeColor() {
+        // 获取元素引用
+        var element = document.getElementById('myElement');
+
+        // 更改元素的颜色为红色
+        element.style.color = 'red';
+    }
+    //element.classList.add('error'); // 添加一个名为'error'的类
+    //element.classList.remove('right'); // 移除一个名为'right'的类
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        #box{
+            border:1px solid #ccc;
+
+            width:430px;
+            height:70px;
+            padding-top:430px;
+            margin-left: 20px;
+
+            background: url('./img/1.jpg') no-repeat;
+            background-size: cover;
+        }
+        #box ul li {
+            display: inline-block;
+            margin-right: 22px;
+            margin-left: 20px;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li id="item1">
+                <img src="./img/2.jpg" height="40" width="40">
+            </li>
+            <li id="item2">
+                <img src="./img/3.jpg" height="40" width="40">
+            </li>
+            <li id="item3">
+                <img src="./img/4.jpg" height="40" width="40">
+            </li>
+            <li id="item4">
+                <img src="./img/5.jpg" height="40" width="40">
+            </li>
+            <li id="item5">
+                <img src="./img/6.webp" height="40" width="40">
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        //这样的代码冗余性特别高，也不是我们想要的样子。
+        /*
+        var item1=document.getElementById('item1');
+        var item2=document.getElementById('item2');
+        var item3=document.getElementById('item3');
+        var item4=document.getElementById('item4');
+        var item5=document.getElementById('item5');
+        var oBox=document.getElementById('box');
+        item1.onmouseover = function(){
+            oBox.style.background = 'url(./img/2.jpg)';
+        }
+        item2.onmouseover = function(){
+            oBox.style.background = 'url(./img/3.jpg)';
+        }
+        item3.onmouseover = function(){
+            oBox.style.background = 'url(./img/4.jpg)';
+        }
+        item4.onmouseover = function(){
+            oBox.style.background = 'url(./img/5.jpg)';
+        }
+        item5.onmouseover = function(){
+            oBox.style.background = 'url(./img/6.webp)';
+        }
+         */
+        //1、获取事件源：
+        function $(id){
+            return typeof id === 'string'?document.getElementById(id):null;
+        }
+        //2、改变背景图：
+        // function change(liId,imgSrc){
+        //     $(liId).onmouseover = function(){
+        //         $('box').style.background = imgSrc;
+        //         $('box').style.backgroundImage =
+        //     }
+        // }
+        // 2、改变背景图：
+        function change(liId, imgSrc) {
+            var liElement = $(liId);
+            var boxElement = $('box');
+            var originalBackground = boxElement.style.backgroundImage; // 保存原始背景图片
+
+            liElement.onmouseover = function() {
+                boxElement.style.backgroundImage = imgSrc; // 设置新的背景图片
+            };
+
+            liElement.onmouseout = function() {
+                boxElement.style.backgroundImage = originalBackground; // 恢复原始背景图片
+            };
+        }
+        /*
+        1、在 change 函数中，您尝试设置背景图片，但是 background 和 backgroundImage 属性的赋值存在一些问题。
+        您应该只使用 backgroundImage 属性来设置背景图片。
+
+        2、在 change 函数中，当鼠标移出时，背景图片不会恢复。
+        如果您想要当鼠标移出时恢复原来的背景图片，您需要在 mouseout 事件上设置另一个函数。
+
+        3、您的 change 函数应该能够处理当鼠标移出时恢复背景图片的逻辑。
+         */
+        change('item1','url(./img/2.jpg)');
+        change('item2','url(./img/3.jpg)');
+        change('item3','url(./img/4.jpg)');
+        change('item4','url(./img/5.jpg)');
+        change('item5','url(./img/6.webp)');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传图片验证</title>
+    <script type="text/javascript">
+        //jpg webp
+        window.onload = function(){
+            //1、获取标签
+            var file = document.getElementById('file');
+            //2、监听图片选择的变化
+            file.onchange = function(){
+                //2.1、获取上传的图片路径
+                var path = this.value;
+                console.log(path);
+                //2.2、获取.在路径字符串中占的位置。
+                var loc = path.lastIndexOf('.');
+                //2.3、截取文件路径的后缀名
+                var suffix = path.substr(loc);
+                console.log(suffix);
+                //2.4、统一转小写
+                var lower_suffix = suffix.toLowerCase();
+                //2.5、判断：
+                if(lower_suffix === '.jpg'){
+                    alert('上传图片格式正确！');
+                }
+                else{
+                    alert('上传图片格式错误！')
+                }
+            }
+        }
+    </script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <label for="file">上传图片格式验证</label>
+    <input type="file" name="" id="file">
+</body>
+</html>
