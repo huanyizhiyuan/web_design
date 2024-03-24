@@ -1,0 +1,31 @@
+<svg width="1446" height="26" viewBox="0 0 1446 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_d_6_18)">
+        <path d="M4 9C4 13.4183 7.58172 17 12 17C16.4183 17 20 13.4183 20 9C20 4.58172 16.4183 1 12 1C7.58172 1 4 4.58172 4 9ZM1442 8.99987L1427 0.339623L1427 17.6601L1442 8.99987ZM12 10.5L1428.5 10.4999L1428.5 7.49988L12 7.5L12 10.5Z" fill="#E5CDBC"/>
+    </g>
+    <defs>
+        <filter id="filter0_d_6_18" x="0" y="0.33963" width="1446" height="25.3205" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6_18"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6_18" result="shape"/>
+        </filter>
+    </defs>
+    <defs>
+        <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <path d="M4 9C4 13.4183 7.58172 17 12 17C16.4183 17 20 13.4183 20 9C20 4.58172 16.4183 1 12 1C7.58172 1 4 4.58172 4 9ZM1442 8.99987L1427 0.339623L1427 17.6601L1442 8.99987ZM12 10.5L1428.5 10.4999L1428.5 7.49988L12 7.5L12 10.5Z" fill="url(#timelineGradient)"/>
+    <g filter="url(#filter0_d_6_18)">
+        <path d="M4 9C4 13.4183 7.58172 17 12 17C16.4183 17 20 13.4183 20 9C20 4.58172 16.4183 1 12 1C7.58172 1 4 4.58172 4 9ZM1442 8.99987L1427 0.339623L1427 17.6601L1442 8.99987ZM12 10.5L1428.5 10.4999L1428.5 7.49988L12 7.5L12 10.5Z" fill="url(#timelineGradient)"/>
+
+        <!-- 添加圆形结点 -->
+        <circle cx="120" cy="9" r="15" fill="#ffffff" stroke="#E5CDBC" stroke-width="2" />
+        <circle cx="1300" cy="9" r="4" fill="#ffffff" stroke="#E5CDBC" stroke-width="2" />
+    </g>
+</svg>
