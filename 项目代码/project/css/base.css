@@ -1,0 +1,30 @@
+*{
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 5px 10%;
+    border: 2px solid black; /* 边框宽度为1像素，实线，红色 */
+}
+li,a{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    /*color: #edf0f1;*/
+    color:#000000;
+    text-decoration: none;
+}
+body{
+    background: url('../img/背景.jpg')no-repeat center center fixed;
+    /*兼容浏览器版本*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
