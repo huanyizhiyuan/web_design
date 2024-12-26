@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 注意这里要修改地址-->
+<mapper namespace="com.example.springboot_project.mapper.UserMapper" >
+    <!-- 这里的 # 代表即将要传入的参数。-->
+    <select id="selectUserById" parameterType="int" resultType="com.example.springboot_project.model.User">
+        select * from user where id=#{id}
+    </select>
+
+</mapper>
