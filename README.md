@@ -1,5 +1,5 @@
 # web_design
-## 这里是网页开发的代码存储库
-HTML5+CSS+JavaScript
-## 基本介绍
-就这样。
+
+存储JavaScript知识点以及Springboot的知识点。
+
+其中JS是JavaScript的文件夹，Springboot project 是 Springboot 的项目集。
