@@ -1,0 +1,24 @@
+# 端口号，默认8080
+server:
+  port: 8080
+
+#  命名以及数据库连接。
+spring:
+  application:
+    name: crud_demo
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect # 数据库语言，不填也可以自动推测。
+    show-sql: true       # 显示 SQL
+    hibernate:
+      ddl-auto: update  # 自动创建/更新数据库表结构，建议在生产环境中使用none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect  # 数据库方言
+        format_sql: true  # 格式化 SQL 输出
